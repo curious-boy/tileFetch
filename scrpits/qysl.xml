@@ -1,0 +1,65 @@
+<?xml version="1.0" standalone="yes"?>
+<root>
+  <IP>125.91.215.244</IP>
+  <Port>8719</Port>
+  <Map>qygzshiliang</Map>
+  <Style>Default</Style>
+  <uCrs>epsg:4610</uCrs>
+  <EXT>png</EXT>  
+  <TileMatrix>
+    <Identifier>EPSG:4610:8</Identifier>   
+    <ScaleDenominator>2311166.84</ScaleDenominator>
+    <TopLeftCorner>90 -180</TopLeftCorner>
+    <TileWidth>256</TileWidth>
+    <TileHeight>256</TileHeight>
+    <MatrixWidth>256</MatrixWidth>
+    <MatrixHeight>128</MatrixHeight>  
+    <RowStart>46</RowStart>
+    <RowEnd>47</RowEnd>
+    <ColStart>207</ColStart>
+    <ColEnd>209</ColEnd>      
+    <Resolution>0.0054931640625</Resolution>
+  </TileMatrix>
+  <TileMatrix>
+    <Identifier>EPSG:4610:11</Identifier>
+    <ScaleDenominator>288895.85</ScaleDenominator>
+    <TopLeftCorner>90 -180</TopLeftCorner>
+    <TileWidth>256</TileWidth>
+    <TileHeight>256</TileHeight>
+    <MatrixWidth>2048</MatrixWidth>
+    <MatrixHeight>1024</MatrixHeight>
+    <RowStart>368</RowStart>
+    <RowEnd>378</RowEnd>
+    <ColStart>1660</ColStart>
+    <ColEnd>1672</ColEnd>
+    <Resolution>0.0006866455078125</Resolution>
+  </TileMatrix>
+  <TileMatrix>
+    <Identifier>EPSG:4610:12</Identifier>
+    <ScaleDenominator>144447.93</ScaleDenominator>
+    <TopLeftCorner>90 -180</TopLeftCorner>
+    <TileWidth>256</TileWidth>
+    <TileHeight>256</TileHeight>
+    <MatrixWidth>4096</MatrixWidth>
+    <MatrixHeight>2048</MatrixHeight>
+    <RowStart>737</RowStart>
+    <RowEnd>757</RowEnd>
+    <ColStart>3321</ColStart>
+    <ColEnd>3344</ColEnd>
+    <Resolution>0.00034332275390625</Resolution>
+  </TileMatrix>    
+  <TileMatrix>
+    <Identifier>EPSG:4610:15</Identifier>
+    <ScaleDenominator>18055.99</ScaleDenominator>
+    <TopLeftCorner>90 -180</TopLeftCorner>
+    <TileWidth>256</TileWidth>
+    <TileHeight>256</TileHeight>
+    <MatrixWidth>26755</MatrixWidth>
+    <MatrixHeight>6059</MatrixHeight>
+    <RowStart>5897</RowStart>
+    <RowEnd>6058</RowEnd>
+    <ColStart>26570</ColStart>
+    <ColEnd>26754</ColEnd>
+    <Resolution>0.00004291534423828125</Resolution>
+  </TileMatrix>    
+</root>
