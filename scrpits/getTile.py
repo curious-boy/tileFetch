@@ -5,6 +5,13 @@
 import StringIO
 import pycurl
 
+class GetPicException(Exception):
+	"""下载图片异常处理"""
+	def __init__(self, name):
+		super(GetPicException,self).__init__()
+		self.name = name
+
+
 class GetTileExcption(Exception):
 	"""下载切片异常处理"""
 	def __init__(self, identifier,row, col, num):
@@ -77,11 +84,29 @@ def getTileEx(listecp,url, filename ):
 
 		c.perform()
 
+		filesize = c.getinfo(c.SIZE_DOWNLOAD)
+		#print "Document size: %d bytes" % c.getinfo(c.SIZE_DOWNLOAD)
+		#print "HTTP-code:", c.getinfo(c.HTTP_CODE)
+		#print "Effective URL:", c.getinfo(c.EFFECTIVE_URL)
+		#print "Content-type:", c.getinfo(c.CONTENT_TYPE)
+		#print "Namelookup-time:", c.getinfo(c.NAMELOOKUP_TIME)
+		#print "Redirect-time:", c.getinfo(c.REDIRECT_TIME)
+		#print "Redirect-count:", c.getinfo(c.REDIRECT_COUNT)
+	
+		if int(filesize) > 20000 :
+			return filesize
+			
+
 		f = open("%s" % (filename,), 'wb')
 		f.write(html.getvalue())
 		f.close()
+
+		return filesize
+		
 	except Exception, e:
-		listecp.append("exceptiontag")		
+		listecp.append("exceptiontag")	
+		print e
+		print "exception"	
 
 
 
