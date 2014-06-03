@@ -1,6 +1,6 @@
 #coding: utf-8
 #! /usr/bin/env python
-#filename: getUrlPic.py
+#filename: getUrlPicFromRange.py
 
 import os,sys,string,time
 from getTile import *
@@ -34,12 +34,14 @@ def downUrlPic(url_prefix, idstart,idend, format,dstdir):
 				filesize = getTileEx(listecp, url_pic,dstdir + str(curid) + "." + format  )
 				print "filesize: %s" % filesize
 				if int(filesize) > 20000 :
-					#print "file: %s.%s is not exist..." % (curid, format)
-					print "--------------"
+					print "file: %s.%s is not exist..." % (curid, format)
+					file_object.writelines(url_pic + "\n")
+					#file_object.writeline
+					#print "--------------"
 				else:
 					#print "file: %s.%s is exist..." % (curid, format)
-					print url_pic
-					file_object.writelines(url_pic+"\n")
+					print "%s was download..."  % url_pic
+					#file_object.writelines(url_pic+"\n")
 				#os.getcwd()
 			except Exception, e:
 				file_object.close();
@@ -66,7 +68,7 @@ if __name__ == '__main__':
 	idstart= 15900;
 	idend=16600
 	format = "png"
-	dstdir = os.getcwd() + "\\pic\\" 
+	dstdir = os.getcwd() + "\\pic_range\\" 
 	print "dstdir: %s" % dstdir
 
 	downUrlPic(url_prefix, idstart, idend, format, dstdir )

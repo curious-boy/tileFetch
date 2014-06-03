@@ -66,7 +66,7 @@ def getTileEx(listecp,url, filename ):
 		
 		c.setopt(pycurl.URL, url)
 
-		c.setopt(pycurl.PROXY, "http://10.1.3.164:8083")
+		#c.setopt(pycurl.PROXY, "http://10.1.3.164:8083")
 		c.setopt(pycurl.HTTPPROXYTUNNEL,1) 
 		c.setopt(pycurl.NOSIGNAL, 1)
 
