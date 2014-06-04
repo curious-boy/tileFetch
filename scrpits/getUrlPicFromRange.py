@@ -29,7 +29,7 @@ def downUrlPic(url_prefix, idstart,idend, format,dstdir):
 
 		for curid in xrange(idstart,idend):
 			url_pic = url_prefix + str(curid) + "." + format;
-			#print "url_pic: %s" % url_pic
+			print "url_pic: %s" % url_pic
 		
 
 			try:
@@ -44,7 +44,7 @@ def downUrlPic(url_prefix, idstart,idend, format,dstdir):
 				else:
 					#print "file: %s.%s is exist..." % (curid, format)
 					print "%s was download..."  % url_pic
-					#file_object.writelines(url_pic+"\n")
+					file_object.writelines(url_pic+"\n")
 				#os.getcwd()
 			except Exception, e:
 				file_object.close();
@@ -55,8 +55,7 @@ def downUrlPic(url_prefix, idstart,idend, format,dstdir):
 	except GetPicException, e1:
 		file_object.close()
 		print e1
-		print e1.name
-		print "dddddddd"
+		print e1.name		
 		# store name of undownload file  to file
 	except Exception , e:
 		file_object.close()
@@ -72,6 +71,6 @@ if __name__ == '__main__':
 	idend=16600
 	format = "png"
 	dstdir = os.getcwd() + "\\pic_range\\" 
-	print "dstdir: %s" % dstdir
+	#print "dstdir: %s" % dstdir
 
 	downUrlPic(url_prefix, idstart, idend, format, dstdir )
