@@ -2,6 +2,9 @@
 #! /usr/bin/env python
 #filename: getUrlPicFromRange.py
 
+#introduction: download pic file from a range ,between idstart and idend,
+# and record the undownload file in qrcodelist.txt
+
 import os,sys,string,time
 from getTile import *
 

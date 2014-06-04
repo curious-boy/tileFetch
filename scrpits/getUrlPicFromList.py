@@ -15,7 +15,7 @@ def downUrlPicFromList(rfile,wfile, dstdir):
 
 		while 1:
 			url_pic = file_object.readline();
-			url_pic.strip().lstrip().rstrip(',')
+			url_pic = url_pic.strip('\n')
 			print "url_pic: %s" % url_pic
 			if not url_pic:
 				break
@@ -29,6 +29,7 @@ def downUrlPicFromList(rfile,wfile, dstdir):
 			try:
 				#print "-----------------------1----------"
 				#filesize = getTileEx(listecp, url_pic,dstdir + str(curid) + "." + format  )
+
 				filesize = getTileEx(listecp, url_pic,dstdir + url_pic.split('/')[5]  )
 				#print "filesize: %s" % filesize
 				if int(filesize) > 20000 :
@@ -44,6 +45,7 @@ def downUrlPicFromList(rfile,wfile, dstdir):
 				file_w.close()
 				print "\ngetTileEx exception happen"	
 				raise GetPicException( url_pic)
+		print "file was closed"
 		file_object.close()
 		file_w.close()
 		
@@ -65,9 +67,14 @@ def downUrlPicFromList(rfile,wfile, dstdir):
 
 if __name__ == '__main__':
 	
+
 	listfile = os.getcwd() + "\\" + "qrcodelist.txt"
 	wfile = os.getcwd() + "\\" + "qrcodelist_bak.txt"
-	dstdir = os.getcwd() + "\\pic_range\\" 
+	dstdir = os.getcwd() + "\\pic_list\\" 
 	print "dstdir: %s" % dstdir
 
 	downUrlPicFromList( listfile , wfile, dstdir )
+
+	print "rename"
+	os.remove( listfile )
+	os.rename(wfile, listfile)
