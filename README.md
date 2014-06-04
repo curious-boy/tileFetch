@@ -7,3 +7,6 @@ A tool for download tile from a wmts service ,for example newmap
 
 另外，图片的检查和修复工具，用于检查和修复错误的切片数据；
 
+
+
+增加二维码图片下载工具；辅助3G关键词搜索客户资料
